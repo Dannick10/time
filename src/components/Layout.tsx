@@ -27,7 +27,7 @@ const Layout = (props: Props) => {
                 <Image src={Mycaela} width={50} height={50} alt="Mycaela"/>
                 </div>
                 </span>
-          <p  className="badge badge-primary badge-outline">Mycaela Natalli</p>
+          <p  className="badge badge-primary badge-outline">Mycaela Nattali</p>
         </div>
         <div className="swap-off flex items-center justify-center gap-1"  onClick={() => props.getInfo({name: 'Daniel', city: 'aracaju', theme: 'synthwave' })}>
         <span className="avatar">
