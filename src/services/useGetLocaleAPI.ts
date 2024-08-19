@@ -18,7 +18,7 @@ export default function useGetLocaleAPI() {
     const countryCode = "BR";
     const language = "pt";
     const limit = 1;
-    const link = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${countryCode}&limit=${limit}&appid=${api_key}&lang=${language}`;
+    const link = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${countryCode}&limit=${limit}&appid=9583730b2062b79690e88912c5724e10&lang=${language}`;
     SetLoading(true)
     try {
       const response = await axios.get(link);
@@ -32,7 +32,7 @@ export default function useGetLocaleAPI() {
   };
 
   const fetchDataWeather = async (lat: string, lon: string) => {
-    const link = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api_key}&lang=pt&units=metric`;
+    const link = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=9583730b2062b79690e88912c5724e10&lang=pt&units=metric`;
 
     try {
       const response = await axios.get(link);
