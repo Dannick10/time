@@ -23,7 +23,7 @@ const Layout = (props: Props) => {
         <input type="checkbox" />
         <div className="swap-on flex items-center justify-center gap-1" onClick={() => props.getInfo({name: 'Mycaela', city: 'caçapava', theme: 'coffee' })}>
             <span className="avatar">
-                <div className="rounded-full">
+                <div className="rounded-full min-h-20">
                 <Image src={Mycaela} width={50} height={50} alt="Mycaela"/>
                 </div>
                 </span>
@@ -31,8 +31,8 @@ const Layout = (props: Props) => {
         </div>
         <div className="swap-off flex items-center justify-center gap-1"  onClick={() => props.getInfo({name: 'Daniel', city: 'aracaju', theme: 'synthwave' })}>
         <span className="avatar">
-                <div className="rounded-full">
-                <Image src={Daniel} width={50} height={50} alt="Mycaela"/>
+                <div className="rounded-full min-h-20">
+                <Image src={Daniel} width={50} height={50} alt="Daniel"/>
                 </div>
                 </span>
          <p className="badge badge-primary badge-outline">Daniel Rocha</p> 

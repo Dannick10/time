@@ -27,7 +27,7 @@ export default function Home() {
   return (
     <div data-theme={person.theme} className="transition-all delay-150">
       <Layout getInfo={(person) => handlePersonChange(person)}>
-        {!loading ? <ExebitionWeather weather={weather} /> : <Skeleton />}d
+        {!loading ? <ExebitionWeather weather={weather} /> : <Skeleton />}
       </Layout>
     </div>
   );
