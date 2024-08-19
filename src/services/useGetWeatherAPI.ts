@@ -4,25 +4,25 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function useGetWeatherAPI() {
-  const [data, SetData] = useState(null);
-  const [erro, SetError] = useState(null);
+  const [data, setData] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
 
-  const fetchData = async (lat: string,lon: string) => {
-
+  const fetchData = async (lat: string, lon: string) => {
     const api_key = process.env.NEXT_PUBLIC_KEY;
-    const link = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${api_key}`;
+    const link = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${api_key}&units=metric`;
 
     try {
       const response = await axios.get(link);
-      SetData(response.data);
+      setData(response.data);
+      setError(null);
     } catch (error: any) {
-      SetError(error);
+      setError(error.message || "Erro ao buscar dados");
     }
   };
 
   return {
     data,
-    erro,
+    error,
     fetchData,
   };
 }
