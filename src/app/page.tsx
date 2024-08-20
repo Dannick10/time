@@ -17,7 +17,6 @@ export default function Home() {
     SetPerson(newPerson);
     fetchData();
     SetCity(newPerson.city);
-    console.log(newPerson)
   };
 
   useEffect(() => {

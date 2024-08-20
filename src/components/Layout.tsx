@@ -1,6 +1,4 @@
-import Input from "../components/Input";
 import React from "react";
-import { Weather } from "@/types/Weather";
 import Image from "next/image";
 import Daniel from '../../public/us/jonata.jpg'
 import Mycaela from '../../public/us/mavis.jpg'

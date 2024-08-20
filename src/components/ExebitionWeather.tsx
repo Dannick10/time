@@ -142,7 +142,7 @@ const ExebitionWeather = ({ weather }: ExebitionWeatherProps) => {
             </tr>
             <tr>
               <td className="flex gap-2">
-                <span className={`text-xl rotate-[${weather?.wind.deg}deg]`}><DirectionIcon/></span>
+                <span className={`text-xl`} style={{rotate: `${weather?.wind.deg}deg`}}><DirectionIcon/></span>
                 <p>Direção do vento</p>
               </td>
               <td>{weather?.wind.deg}º</td>
