@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { ArrowDownIcon, ArrowupIcon } from "@/icons/Icons";
+import { AirIcon, ArrowDownIcon, ArrowupIcon, DirectionIcon, PressureIcon, SpeedIcon, ThermometerIcon, WaveIcon } from "@/icons/Icons";
 import { Weather } from "@/types/Weather";
 
 import clearDay from "../../public/Weather/clear-day.svg";
@@ -56,7 +56,7 @@ const ExebitionWeather = ({ weather }: ExebitionWeatherProps) => {
       case "nevoa":
         return mistDay;
       default:
-        return clearDay; 
+        return  isNight ? clearNight : clearDay;
     }
   };
 
@@ -72,7 +72,7 @@ const ExebitionWeather = ({ weather }: ExebitionWeatherProps) => {
               width={150}
               height={150}
               alt="clima"
-              className="min-w-full translate-x-10 translate-y-5"
+              className="translate-y-8"
             />
           </span>
           <h1 className="text-5xl font-bold">
@@ -114,42 +114,42 @@ const ExebitionWeather = ({ weather }: ExebitionWeatherProps) => {
           <tbody>
             <tr>
               <td className="flex gap-2">
-                <span>SVG</span>
+                <span className="text-xl"><ThermometerIcon/></span>
                 <p>Sensação térmica</p>
               </td>
               <td>{Math.round(weather?.main.feels_like || 0)}º</td>
             </tr>
             <tr>
               <td className="flex gap-2">
-                <span>svg</span>
+                <span className="text-xl"><PressureIcon/></span>
                 <p>Pressão atmosférica</p>
               </td>
               <td>{weather?.main.pressure} hPa</td>
             </tr>
             <tr>
               <td className="flex gap-2">
-                <span>SVG</span>
+                <span className="text-xl"><AirIcon/></span>
                 <p>Umidade relativa do ar</p>
               </td>
               <td>{weather?.main.humidity}%</td>
             </tr>
             <tr>
               <td className="flex gap-2">
-                <span>SVG</span>
+                <span className="text-xl"><WaveIcon /></span>
                 <p>Pressão ao nível do mar</p>
               </td>
               <td>{weather?.main.sea_level || weather?.main.pressure} hPa</td>
             </tr>
             <tr>
               <td className="flex gap-2">
-                <span>SVG</span>
+                <span className={`text-xl rotate-[${weather?.wind.deg}deg]`}><DirectionIcon/></span>
                 <p>Direção do vento</p>
               </td>
               <td>{weather?.wind.deg}º</td>
             </tr>
             <tr>
               <td className="flex gap-2">
-                <span>SVG</span>
+                <span className="text-xl"><SpeedIcon/></span>
                 <p>Velocidade do vento</p>
               </td>
               <td>{weather?.wind.speed} m/s</td>

@@ -1,6 +1,24 @@
 import React from 'react'
 
 const Skeleton = () => {
+
+
+  const renderTable = () => {
+    const rows = []
+
+    for(let i = 0; i <= 6; i++) {
+      rows.push( <tr>
+        <td className="flex gap-2">
+          <span className='py-1'></span>
+          <p className='py-1'></p>
+        </td>
+        <td></td>
+      </tr>)
+    }
+
+    return rows
+  }
+
   return (
     <div className='skeleton min-h-screen'>
       <section className="hero min-h-52">
@@ -43,48 +61,7 @@ const Skeleton = () => {
       <div className="overflow-x-auto">
         <table className="table table-zebra">
           <tbody>
-            <tr>
-              <td className="flex gap-2">
-                <span>SVG</span>
-                <p>Sensação térmica</p>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td className="flex gap-2">
-                <span>svg</span>
-                <p>Pressão atmosférica</p>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td className="flex gap-2">
-                <span>SVG</span>
-                <p>Umidade relativa do ar</p>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td className="flex gap-2">
-                <span>SVG</span>
-                <p>Pressão ao nível do mar</p>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td className="flex gap-2">
-                <span>SVG</span>
-                <p>Direção do vento</p>
-              </td>
-              <td></td>
-            </tr>
-            <tr>
-              <td className="flex gap-2">
-                <span>SVG</span>
-                <p>Velocidade do vento</p>
-              </td>
-              <td></td>
-            </tr>
+            {renderTable()}
           </tbody>
         </table>
       </div>
